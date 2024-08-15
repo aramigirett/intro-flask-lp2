@@ -38,3 +38,7 @@ git checkout nombrerama
 ```
 git branch
 ```
+#### instalar el driver de la base de datos Postgresql
+```
+pip install psycopg2.binary
+```
