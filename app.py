@@ -1,20 +1,26 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
-app= Flask(__name__)
+app = Flask(__name__)
 
 @app.route('/inicio')
 def inicio():
-    return"Hola mundo"
+    return "hola mundo desde el backend"
 
+# endpoint o ruta
 @app.route('/contacto')
 def contacto():
-    return "<h3>Introducciendo HTML desde el servidor</h3>"
+    return "<h3>Introduciendo HTML desde el servidor</h3>"
 
 @app.route('/contacto2')
 def contacto2():
     return render_template('contacto.html')
 
+@app.route('/guardar-mascota', methods=['POST'])
+def guardarMascota():
+    print(request.form)
+    nombreMascota = request.form.get('txtNombreMascota')
+    return f"Ya llego tu mascota <strong>{nombreMascota}</strong> al servidor"
 
-# se pregunta por el proseco principal
+# se pregunta por el proceso principal
 if __name__=='__main__':
     app.run(debug=True)
