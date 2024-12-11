@@ -24,12 +24,14 @@ pip freeze > paquetes.txt
 ```
 pip install -r paquetes.txt
 ```
-
 #### traer cambios del repositorio
+ ```
+ git pull origin main
+ ```
+#### crear ramas hijas
 ```
-git pull
+git checkout -b rama-hija
 ```
-
 #### moverse entre ramas
 ```
 git checkout nombrerama
@@ -37,4 +39,8 @@ git checkout nombrerama
 #### mostrar las ramas, incluida la que esta en uso
 ```
 git branch
+```
+#### instalar el driver de la base de datos postgresql
+```
+pip install psycopg2-binary
 ```
